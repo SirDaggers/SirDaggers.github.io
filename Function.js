@@ -1,8 +1,11 @@
 const canvas = document.getElementById('preview');
 const fileInput = document.querySelector('input[type="file"');
+const customBtn = document.querySelector("#custom-btn");
+const defaultBtn = document.querySelector("#default-btn");
 const asciiImage = document.getElementById('ascii');
-
 const context = canvas.getContext('2d');
+var upload = document.getElementById("custom-btn");
+var download = document.getElementById("download-btn");
 
 const toGrayScale = (r, g, b) => 0.21 * r + 0.72 * g + 0.07 * b;
 
@@ -60,9 +63,9 @@ const clampDimensions = (width, height) => {
     return [rectifiedWidth, height];
 };
 
+
 fileInput.onchange = (e) => {
     const file = e.target.files[0];
-
     const reader = new FileReader();
     reader.onload = (event) => {
         const image = new Image();
@@ -81,7 +84,6 @@ fileInput.onchange = (e) => {
 
         image.src = event.target.result;
     };
-
     reader.readAsDataURL(file);
 };
 
@@ -96,9 +98,20 @@ const drawAscii = (grayScales, width) => {
         if ((index + 1) % width === 0) {
             nextChars += '\n';
         }
-
+        download.style.visibility = "visible";
         return asciiImage + nextChars;
     }, '');
 
     asciiImage.textContent = ascii;
 };
+
+function CreateTextFile() {
+    var blob = new Blob([asciiImage.textContent],{
+        type: "text/plain;charset=utf-8",
+    });
+    saveAs(blob,"asciiArt.txt");
+}
+
+function defaultBtnActive(){
+    defaultBtn.click();
+}

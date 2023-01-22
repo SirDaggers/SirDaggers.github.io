@@ -1,0 +1,82 @@
+
+body {
+    background: rgb(30, 40, 50);
+    display: grid;
+    text-align: center;
+    padding: 2rem 3rem;
+    font-family: "Aclonica";
+    line-height: 1.9rem;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+header {
+    text-align: center;
+    font-size: 50px;
+    height: 50px;
+    color: #0fd5f4;
+}
+
+footer {
+  text-align: center;
+  font-size: 20px;
+  color: #0fd5f4;
+}
+
+pre {
+    font-family: 'Courier New', 'monospace';
+    margin: 1rem auto;
+    font-size: 6px;
+    line-height: 1;
+    color: rgb(0, 0, 0);
+    background: white;
+}
+  
+.uploadBtn #custom-btn {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    border-color: rgb(37, 224, 184);
+    color: rgb(37, 224, 184);
+    font-size: 20px;
+    width: 500px;
+    padding: 20px 50px;
+    cursor: pointer;
+}
+
+.uploadBtn #custom-btn:not(.chosen):hover {
+    color: black;
+    transition: 0.4s;
+    background:rgb(37, 224, 184);
+    box-shadow: 0 0 10px 0 rgb(95, 233, 203);
+}
+
+.downloadBtn #download-btn {
+    visibility: hidden;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    border-color: rgb(37, 224, 184);
+    color: rgb(37, 224, 184);
+    font-size: 20px;
+    width: 500px;
+    padding: 20px 50px;
+    cursor: pointer;
+}
+
+.downloadBtn #download-btn:not(.chosen):hover {
+    color: black;
+    transition: 0.4s;
+    background:rgb(37, 224, 184);
+    box-shadow: 0 0 10px 0 rgb(95, 233, 203);
+}
+
+.mem {
+    color: white;
+}
+ 
+.canvas #preview{
+    display: flex;
+    border: 10px;
+    border-color: #0fd5f4;
+}
